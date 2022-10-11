@@ -5,48 +5,29 @@ import Lista from '../src/components/Lista/Lista'
 import { useIndex } from '../src/hooks/pages/useIndex'
 
 const Home: NextPage = () => {
-  const professores: Professor[] = [
-    { 
-      id: 1, 
-      nome: "Professor1", 
-      foto: "https://github.com/Karoladd.png",
-      descricao: "Descrição do professor 1",
-      valor_hora: 100
-     },
-     { 
-      id: 2, 
-      nome: "Professor2", 
-      foto: "https://github.com/Karoladd.png",
-      descricao: "Descrição do professor 2",
-      valor_hora: 200
-     },
-     { 
-      id: 3, 
-      nome: "Professor3", 
-      foto: "https://github.com/Karoladd.png",
-      descricao: "Descrição do professor 3",
-      valor_hora: 300
-     },
-     { 
-      id: 4, 
-      nome: "Professor4", 
-      foto: "https://github.com/Karoladd.png",
-      descricao: "Descrição do professor 4",
-      valor_hora: 400
-     }
-  ]
+  const { 
+    listaProfessores, 
+    nome, 
+    setNome, 
+    email, 
+    setEmail,
+    professorSelecionado,
+    setProfessorSelecionado,
+    marcarAula,
+    mensagem,
+    setMensagem
+  } = useIndex();
 
   return (
    <div>
       <Box sx={{ backgroundColor: 'secondary.main' }}>
         <Lista 
-        professores={professores}
-          /* professores={listaProfessores}
-          onSelect={(professor) => setProfessorSelecionado(professor)} */
+          professores={listaProfessores}
+          onSelect={(professor) => setProfessorSelecionado(professor)}
         ></Lista>
       </Box>
 
-{/*       <Dialog onClose={() => setProfessorSelecionado(null)} open={professorSelecionado !== null} fullWidth PaperProps={{sx: {p: 5}}}>
+      <Dialog onClose={() => setProfessorSelecionado(null)} open={professorSelecionado !== null} fullWidth PaperProps={{sx: {p: 5}}}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
              <TextField 
@@ -79,7 +60,7 @@ const Home: NextPage = () => {
         open={mensagem.length > 0}
         autoHideDuration={2500}
         onClose={() => setMensagem('')}
-      /> */}
+      />
    </div>
   )
 }
