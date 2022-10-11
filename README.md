@@ -1,6 +1,7 @@
 # Semana React Python
 
-![image](https://user-images.githubusercontent.com/61714418/195141545-838b928e-7ac1-458c-917c-7104a4956b13.png)
+![image](https://user-images.githubusercontent.com/61714418/195143205-4249633b-2285-471d-8561-0c6104fa1207.png)
+
 
 AULA 1 - FRONT-END
 Utilização do React
